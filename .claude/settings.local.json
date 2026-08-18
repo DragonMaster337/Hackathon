@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.expo.dev)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\nodejs\\\\node.exe\",\"$env:LOCALAPPDATA\\\\nvs\",\"$env:APPDATA\\\\nvm\",\"$env:ProgramFiles\\\\nodejs\" -ErrorAction SilentlyContinue | Select-Object -First 5 FullName; Get-Command node.exe -ErrorAction SilentlyContinue)",
+      "PowerShell(Test-Path \"C:\\\\Program Files\\\\nodejs\\\\node.exe\"; Test-Path \"C:\\\\Program Files \\(x86\\)\\\\nodejs\\\\node.exe\"; Test-Path \"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\\\\node.exe\"; Test-Path \"$env:APPDATA\\\\npm\\\\npx.cmd\")",
+      "PowerShell($p = @\\(\"$env:LOCALAPPDATA\\\\fnm_multishells\",\"$env:LOCALAPPDATA\\\\fnm\",\"$env:USERPROFILE\\\\.volta\\\\bin\\\\node.exe\",\"$env:LOCALAPPDATA\\\\Volta\",\"$env:ProgramFiles\\\\nodejs\",\"$env:USERPROFILE\\\\scoop\\\\apps\\\\nodejs\",\"$env:ChocolateyInstall\\\\bin\\\\node.exe\"\\); foreach\\($i in $p\\){ \"$i -> $\\(Test-Path $i\\)\" }; \"PATH entries with node:\"; \\($env:PATH -split ';'\\) | Where-Object { $_ -match 'node|npm|fnm|volta|nvm' })",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell($p = @\\(\"C:\\\\Program Files\\\\nodejs\\\\node.exe\",\"C:\\\\Program Files \\(x86\\)\\\\nodejs\\\\node.exe\",\"$env:LOCALAPPDATA\\\\nvs\",\"$env:APPDATA\\\\nvm\",\"$env:LOCALAPPDATA\\\\fnm_multishells\"\\); foreach\\($x in $p\\){ \"{0} -> {1}\" -f $x, \\(Test-Path $x\\) })",
+      "Bash(npm -v)",
+      "PowerShell([Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); \"---MACHINE---\"; [Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\))",
+      "PowerShell($roots = @\\(\"$env:LOCALAPPDATA\",\"$env:PROGRAMFILES\",\"C:\\\\ProgramData\",\"$env:USERPROFILE\\\\scoop\",\"C:\\\\tools\"\\); foreach\\($r in $roots\\){ if\\(Test-Path $r\\){ Get-ChildItem -Path $r -Filter node.exe -Recurse -Depth 4 -ErrorAction SilentlyContinue | Select-Object -First 5 -ExpandProperty FullName } })",
+      "PowerShell(\\(Get-ChildItem C:\\\\Users\\\\rafas\\\\PartyFinder\\\\PartyFinder\\\\node_modules -Directory\\).Count; Test-Path C:\\\\Users\\\\rafas\\\\PartyFinder\\\\PartyFinder\\\\node_modules\\\\.bin\\\\expo.cmd; Test-Path C:\\\\Users\\\\rafas\\\\PartyFinder\\\\PartyFinder\\\\src\\\\lib\\\\supabase.js)",
+      "PowerShell(\"--- sql files ---\")"
+    ]
+  }
+}
